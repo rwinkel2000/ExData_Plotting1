@@ -21,6 +21,6 @@ rm(df_power)
 # My working directory, but unlikely to be yours! 
 #setwd("C:/Data/Data_Mining/coursera_johns_hopkins_data_sci/Exploratory_Course/github/ExData_Plotting1")
 
-pdf(file="plot1.pdf",width=480,height=480)
+png(file="plot1.png",width=480,height=480)
 with(df,hist(Global_active_power, col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)"))
 dev.off()

@@ -20,7 +20,7 @@ rm(df_power)
 # My working directory, but unlikely to be yours! 
 #setwd("C:/Data/Data_Mining/coursera_johns_hopkins_data_sci/Exploratory_Course/github/ExData_Plotting1")
 
-pdf(file="plot4.pdf",width=480,height=480)         
+png(file="plot4.png",width=480,height=480)         
 
 par(mfcol=c(2,2), mar = c(4,4,2,1), oma=c(0,0,2,0))
 #plot2 #############
