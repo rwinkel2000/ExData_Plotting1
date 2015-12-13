@@ -14,7 +14,7 @@ df<-subset(df_power, date_lowest <= as.Date(DateTime) & as.Date(DateTime) <= dat
 
 rm(df_power)
 
-#===== end of data read-in ===========
+#===== end of data read-in ========= ==
 
 # -------- plot 3
 
