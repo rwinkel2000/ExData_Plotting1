@@ -16,11 +16,21 @@ rm(df_power)
 
 #===== end of data read-in ===========
 
-# -------- plot 1
-
+# -------- plot 2
 # My working directory, but unlikely to be yours! 
 #setwd("C:/Data/Data_Mining/coursera_johns_hopkins_data_sci/Exploratory_Course/github/ExData_Plotting1")
 
-pdf(file="plot1.pdf",width=480,height=480)
-with(df,hist(Global_active_power, col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)"))
+pdf(file="plot2.pdf",width=480,height=480)
+ 
+# x expressed in hours
+x_values<-with(df, DateTime$wd*24+DateTime$hour+DateTime$min/60) 
+with(df,plot(x= x_values,  y=Global_active_power, ylab="Global Active Power (kilowatts)", type="n", xaxt="n", xlab=""))
+with(df,lines(x= x_values,  y=Global_active_power))
+
+
+Aat = seq(from = min(x_values),  by=24, length.out=2)
+
+x_axis_labels <- weekdays(df$DateTime[which(x_values %in% Aat)])
+axis(1, labels=x_axis_labels, at = Aat)
+
 dev.off()
